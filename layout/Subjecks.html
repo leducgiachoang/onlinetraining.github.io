@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div ng-repeat="a in subjects" class="col-sm-6 mb-3">
+            
+            <a style="text-decoration: none;" href="#!mon-hoc/{{ a.Id }}/{{ a.Name }}">
+                <div class="card">
+                    <div class="card-header p-3 mb-2 bg-success text-white">
+                        {{ a.Name }}
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img src="../images/logos/{{ a.Logo }}" alt="">
+                            </div>
+    
+                            <div class="col-sm-8">
+                                <h6 style="color: rgb(1, 1, 122);">Học không chơi đánh rơi tuổi trẻ, chơi không học bán rẻ tương lai</h6>
+                                <button class="btn btn-primary btn-lg">Bắt đầu kiểm tra</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </a>   
+        </div>
+    </div>
+    
+</div>

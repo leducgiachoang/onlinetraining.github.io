@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            CẬP NHẬP TÀI KHOẢN
+        </div>
+    
+        <div class="card-body">
+            <form name="formdangky">
+                <div class="col-sm-10 mx-auto">
+                    <div class="form-group">
+                        <label for="UserName">Tên tài khoản</label>
+                        <div class="input-group">
+                            <input readonly ng-model="student.username" name="dkusername" pattern="[A-Za-z0-9]{1,30}" type="text" class="form-control">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" ng-hide="formdangky.dkusername.$valid">Vui lòng không được để trống và chứa ký tự đặt biệt, tối thiểu 1 đến 30 ký tự!</div>
+                        
+    
+                    </div>
+    
+    
+                    <div class="form-group">
+                        <label for="UserName">Họ và tên</label>
+                        <div class="input-group">
+                            <input type="text" required ng-model="student.fullname" name="dkfullname" class="form-control">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-user-check"></i></span>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" ng-hide="formdangky.dkfullname.$valid">Vui lòng nhập họ và tên !</div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="UserName">Email</label>
+                        <div class="input-group">
+                            <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" ng-model="student.email" name="dkemail" class="form-control">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" ng-hide="formdangky.dkemail.$valid">Vui lòng nhập đúng định dạng email !</div>
+                    </div>
+    
+    
+                    <div class="form-group">
+    
+                        <button ng-click="update()" type="submit" class="btn btn-success">Cập nhập <i class="fas fa-seedling"></i></button>
+                        <button type="reset" class="btn btn-dark">NHẬP LẠI <i class="fas fa-sync-alt"></i></button>
+                    </div>
+    
+                </div>
+            </form>
+    
+            <script>
+               
+            </script>
+        </div>
+    </div>
+</div>

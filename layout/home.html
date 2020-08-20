@@ -1,0 +1,52 @@
+<header ng-include="'layout/layouts/header.html'"></header>
+<div class="container">
+
+    <div style="margin-top: 20px;" class="row">
+
+        <div ng-repeat="a in subjects|orderBy:prop|limitTo:4:begin" class="col-sm-6 mb-3">
+            <a style="text-decoration: none;" href="#!mon-hoc/{{ a.Id }}/{{ a.Name }}">
+                <div class="card">
+                    <div class="card-header p-3 mb-2 bg-success text-white">
+                        {{ a.Name }}
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img src="../images/logos/{{ a.Logo }}" alt="">
+                            </div>
+
+                            <div class="col-sm-8">
+                                <h6 style="color: rgb(1, 1, 122);">Học không chơi đánh rơi tuổi trẻ, chơi không học bán
+                                    rẻ tương lai</h6>
+                                <button class="btn btn-primary btn-lg">Bắt đầu kiểm tra</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <div class="mx-auto">
+            <ul class="pagination">
+                <li class="page-item">
+                    <div ng-click="first()" class="page-link" href="#"><i class="fas fa-angle-double-left"></i></div>
+                </li>
+                <li class="page-item">
+                    <div ng-click="prev()" class="page-link" href="#"><i class="fas fa-angle-left"></i></div>
+                </li>
+                <li class="page-item">
+                    <div ng-click="next()" class="page-link" href="#"><i class="fas fa-angle-right"></i></div>
+                </li>
+                <li class="page-item">
+                    <div ng-click="last()" class="page-link" href="#"><i class="fas fa-angle-double-right"></i></div>
+                </li>
+                <li class="page-item">
+                    <a style="text-decoration: none;" href="#!Subjecks"><div ng-click="last()" class="page-link btn btn-success" href="#">XEM TẤT CẢ</div></a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>

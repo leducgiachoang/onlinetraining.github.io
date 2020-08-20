@@ -1,0 +1,64 @@
+@font-face{
+    font-family: "daicoviet";
+    src: url(../fonts/UTMdaicoviet.ttf);
+}
+header img{
+    width: 100%;
+}
+
+nav img{
+    width: 90px;
+}
+
+.layout-body{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #99979c;
+    background-color: #2a2730;
+    margin-top: 30px;
+}
+
+.footer a {
+    color: white;
+}
+
+.footer a:focus,
+.footer a:hover {
+    color: white !important;
+    text-decoration: underline !important;
+}
+
+.footer p {
+    margin-bottom: 0rem !important;
+}
+
+article img{
+    width: 100%;
+}
+
+.headerTop{
+    padding: 10px;
+    background-color: rgb(0, 108, 141) !important;
+    color: white;
+    text-shadow: 0 0 2 5 black;
+    font-family: "daicoviet"
+}
+.menuContaine a{
+    color: black;
+}
+.mitColor{
+    padding: 0px 12px 0px 0px;
+    margin: 0px -13px 0px 0px;
+    border-radius: 50%;
+}
+.form-search{
+    background-color: #2a2730;
+    color: white;
+    position: absolute !important;
+    width: 80%;
+}

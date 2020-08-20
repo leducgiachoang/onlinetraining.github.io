@@ -1,0 +1,30 @@
+<div class="container">
+    <div>
+        <H3>DANH SÁCH SINH VIÊN LÀM BÀI</H3>
+        <div>
+            <table class="table">
+                <tr>
+                    <th>Tên môn</th>
+                    <th>Tên tài khoản</th>
+                    <th>Họ và tên</th>
+                    <th>Câu đúng</th>
+                    <th>Câu sai</th>
+                    <th>Điểm</th>
+                    <th>Xếp loại</th>
+                </tr>
+                <tr ng-repeat="ax in datas">
+                    <td>{{ ax.NameSubject }}</td>
+                    <td>{{ ax.username }}</td>
+                    <td>{{ ax.fullname }}</td>
+                    <td>{{ ax.correct|number:0 }}</td>
+                    <td>{{ ax.incorrect|number:0 }}</td>
+                    <td>{{ ax.marks|number:2 }}</td>
+                    <th>
+                        <strong style="color: red;" ng-if="ax.marks >= 5">Đạt</strong>
+                        <strong ng-if="ax.marks < 5">Rớt</strong>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

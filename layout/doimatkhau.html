@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            ĐỔI MẬT KHẨU
+        </div>
+    
+        <div class="card-body">
+            <form name="formdoimatkhau">
+                <div class="col-sm-10 mx-auto">
+                    <div class="form-group">
+                        <label for="UserName">Mật khẩu củ</label>
+                        <div class="input-group">
+                            <input ng-model="passwordcu" name="passwordcu" pattern="{{ password }}" type="password"
+                                class="form-control">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-unlock"></i></span>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" ng-hide="formdoimatkhau.passwordcu.$valid">Vui lòng nhập đúng mật
+                            khẩu cũ !</div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="UserName">Mật khẩu mới</label>
+                        <div class="input-group">
+                            <input ng-model="student.password" name="doipassword" type="password" class="form-control">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" ng-hide="formdoimatkhau.doipassword.$valid">Vui lòng nhập phải chứa
+                            5 ký tự trở lên có ít nhất một số và một chữ hoa và chữ thường !</div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="UserName">Xác nhận mật khẩu</label>
+                        <div class="input-group">
+                            <input ng-model="doipassword2" my-directive pattern="{{ student.password }}" name="doipassword2"
+                                type="password" class="form-control">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" ng-hide="formdoimatkhau.doipassword2.$valid">Vui lòng nhập lại cho
+                            đúng !</div>
+                    </div>
+    
+                    <div class="form-group">
+                        
+                            <button ng-show="formdoimatkhau.$valid" ng-click="updatePassword()" type="submit" class="btn btn-success">CẬP NHẬP <i
+                                    class="fas fa-seedling"></i></button>
+                     
+    
+                        <button type="reset" class="btn btn-dark">NHẬP LẠI <i class="fas fa-sync-alt"></i></button>
+                    </div>
+    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

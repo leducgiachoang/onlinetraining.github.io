@@ -1,0 +1,60 @@
+<div class="container">
+
+    <nav class="navbar navbar-expand-lg navbar p-3 mb-0 bg-light text-dark">
+        <a class="navbar-brand text-dark" href="#/!">
+            <i class="fas fa-home"></i>
+        </a>
+        <button style="color: black;" class="navbar-toggler text-dark" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon text-dark"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-dark" href="#!gioi-thieu">Giới thiệu <span
+                            class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#!Subjecks">Môn học</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#!lien-he">Liên hệ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#!gop-y">Góp ý</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#!hoi-dap">Hỏi đáp</a>
+                </li>
+
+                <li class="nav-item">
+                    <a ng-if="logendIn == true" class="nav-link" href="#!dashboard">Quản trị </a>
+                </li>
+            </ul>
+            <div class="my-lg-0 navbar-nav">
+                <li class="nav-item dropdown">
+                    <div class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <strong ng-hide="logendIn">Tài khoản</strong>
+                        {{ fullname }}
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a ng-hide="logendIn" class="dropdown-item" href="#!dang-ky">Đăng ký</a>
+                        <a ng-hide="logendIn" class="dropdown-item" href="#!dang-nhap">Đăng nhập</a>
+                        <a ng-hide="logendIn" class="dropdown-item" href="#!quen-mat-khau">Quên mật khẩu</a>
+                        <div ng-show="logendIn" class="dropdown-divider"></div>
+                        <a ng-show="logendIn" href="#!dang-xuat" class="dropdown-item">Đăng xuất</a>
+                        <a ng-show="logendIn" class="dropdown-item" href="#!doi-mat-khau">Đổi mật khẩu</a>
+                        <a ng-show="logendIn" class="dropdown-item" href="#!cap-nhap-tai-khoan">Cập nhập tài
+                            khoản</a>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+</div>

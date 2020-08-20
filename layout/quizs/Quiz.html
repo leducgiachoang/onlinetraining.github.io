@@ -1,0 +1,138 @@
+<div class="container">
+    <div ng-hide="!answerOver">
+        <div>
+            <h3>KẾT QUẢ BÀI TEST</h3>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Môn học</th>
+                        <th scope="col">Số câu</th>
+                        <th scope="col">Đúng</th>
+                        <th scope="col">Sai</th>
+                        <th scope="col">Tổng điểm</th>
+                        <th scope="col">Xếp loại</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>{{ tennghanh }}</th>
+                        <th>{{ pageCount }}</th>
+                        <th>{{ (diem*pageCount/10)|number:0 }}</th>
+                        <th>{{ (pageCount) - (diem*pageCount/10)|number:0 }}</th>
+                        <th>{{ diem|number: 2 }}</th>
+                        <th>
+                            <strong style="color: red;" ng-if="diem >= 5">Đạt</strong>
+                            <strong ng-if="diem < 5">Rớt</strong>
+                        </th>
+                    </tr>
+    
+                </tbody>
+            </table>
+            <button class="btn btn-warning"  ng-click="reset()">Làm lại</button>
+            <button class="btn btn-success" ng-click="saveTask()">Lưu bài làm</button>
+            
+        </div>
+    
+    
+    
+    
+    </div>
+    <div ng-hide="answerOver">
+    
+    
+    
+    
+        <div ng-repeat="a in myWelcome|limitTo:1:begn" class="card formcauhoi">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <i style="font-size: 43px;" class="far fa-clock"></i>
+                    </div>
+                    <div class="col-sm-11">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped {{ mau }}" role="progressbar"
+                                style="width: {{ phantramthoigian  }}%" aria-valuenow="75" aria-valuemin="0"
+                                aria-valuemax="100">
+                            </div>
+                        </div>
+    
+                        <div style="font-size: 18px;">
+                            {{ tennghanh }}
+                        </div>
+                    </div>
+                </div>
+    
+    
+    
+            </div>
+            <div class="card-body">
+                <div class="float-left" style="text-align: left;">{{ (begn)+1 }}. {{ a.Text }}</div>
+    
+                <div class="float-right">
+    
+                    {{ (begn)+1 }}/ {{ pageCount }}
+    
+                </div>
+                <hr style="clear: both;">
+    
+                <form>
+                    <div ng-repeat="x in a.Answers">
+    
+                        <input name="answerw" id="exampleRadios1" type="radio" value="{{ x.Id }}">
+                        {{ x.Text }}
+                    </div>
+                    <input type="hidden" name="AnswerId" value="{{ a.AnswerId }}">
+                </form>
+    
+            </div>
+    
+            <div class="card-footer">
+                <div class="float-right">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Kết thức bài làm
+                    </button>
+    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">THÔNG BÁO</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Bạn có chắc chắn muốn kết thúc bài làm của mình không ?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
+                                    <button ng-click="overGame()" type="button" data-dismiss="modal"
+                                        class="btn btn-primary">Đồng ý</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div>
+                    <div class="mx-auto">
+                        <ul class="pagination">
+                            <li ng-show="answerMode" class="page-item">
+                                <button type="submit" ng-click="checkcau()" class="page-link" href="#">XÁC NHẬN</button>
+                            </li>
+    
+                            <li ng-show="!answerMode" class="page-item">
+                                <button type="submit" ng-click="nextt()" class="page-link" href="#">TIẾP THEO<i
+                                        class="fas fa-angle-right"></i></button>
+                            </li>
+    
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

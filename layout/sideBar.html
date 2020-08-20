@@ -1,0 +1,16 @@
+<div class="col-sm-4">
+    <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active">
+            DANH MỤC MÔN HỌC
+        </button>
+
+        <div ng-repeat="a in subjects">
+            <!-- Button trigger modal -->
+            <a style="text-decoration: none;" href="#!mon-hoc/{{ a.Id }}/{{ a.Name }}">
+                <button type="button" class="list-group-item list-group-item-action" data-toggle="modal"
+                    data-target="#exampleModal{{ a.Id }}">
+                    {{ a.Name }}
+                </button></a>
+        </div>
+    </div>
+</div>

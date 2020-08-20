@@ -1,0 +1,113 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            ĐĂNG KÝ TÀI KHOẢN
+        </div>
+    
+        <div class="card-body">
+            <form name="formdangky">
+                <div class="col-sm-10 mx-auto">
+                    <div class="form-group">
+                        <label for="UserName">Tên tài khoản</label>
+                        <div class="input-group">
+                            <input ng-model="student.username" name="dkusername" pattern="[A-Za-z0-9]{1,30}" type="text" class="form-control">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" ng-hide="formdangky.dkusername.$valid">Vui lòng không được để trống và chứa ký tự đặt biệt, tối thiểu 1 đến 30 ký tự!</div>
+                        
+    
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="UserName">Mật khẩu</label>
+                        <div class="input-group">
+                            <input type="password" ng-model="student.password" name="dkpassword"  class="form-control">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" ng-hide="formdangky.dkpassword.$valid">Vui lòng nhập phải chứa 5 ký tự trở lên có ít nhất một số và một chữ hoa và chữ thường !</div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="UserName">Nhập lại mật khẩu</label>
+                        <div class="input-group">
+                            <input ng-model="student.password2"  name="dkpassword2" pattern="{{ student.password }}" type="password" class="form-control">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" ng-hide="formdangky.dkpassword2.$valid">Vui lòng nhập lại cho đúng !</div>
+                       
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="UserName">Họ và tên</label>
+                        <div class="input-group">
+                            <input type="text" required ng-model="student.fullname" name="dkfullname" class="form-control">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-user-check"></i></span>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" ng-hide="formdangky.dkfullname.$valid">Vui lòng nhập họ và tên !</div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="UserName">Email</label>
+                        <div class="input-group">
+                            <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" ng-model="student.email" name="dkemail" class="form-control">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" ng-hide="formdangky.dkemail.$valid">Vui lòng nhập đúng định dạng email !</div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="UserName">Giới tính</label>
+                        <div class="row">
+                            <div class="input-group col-sm-6 mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input ng-model="student.gender" name="gender" checked type="radio" aria-label="Checkbox for following text input">
+                                    </div>
+                                </div>
+                                <div class="form-control">Nam</div>
+                            </div>
+    
+                            <div class="input-group col-sm-6 mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input ng-model="student.gender" name="gender" type="radio" aria-label="Checkbox for following text input">
+                                    </div>
+                                </div>
+                                <div class="form-control">Nữ</div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="UserName">Ngày sinh</label>
+                        <div class="input-group">
+                            <input ng-model="student.birthday" name="dkbirdthday" required type="date" class="form-control">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-calendar-alt"></i></span>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" ng-hide="formdangky.dkbirdthday.$valid">Vui lòng nhập ngày sinh !</div>
+                    </div>
+    
+                    <div class="form-group">
+    
+                        <button ng-click="register()" type="submit" class="btn btn-success">ĐĂNG KÝ <i class="fas fa-seedling"></i></button>
+                        <button type="reset" class="btn btn-dark">NHẬP LẠI <i class="fas fa-sync-alt"></i></button>
+                    </div>
+    
+                </div>
+            </form>
+    
+        </div>
+    </div>
+</div>
